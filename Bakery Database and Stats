@@ -1,0 +1,31 @@
+-- Create Bakery Database
+
+CREATE TABLE myBakery (id INTEGER PRIMARY KEY, productName TEXT, productPrice INTEGER, productColor TEXT, productCalories INTEGER);
+
+-- Add products/product information into database
+
+INSERT INTO myBakery VALUES 
+  (1, "Chocolate Chip Cookie", 3, "Tan", 150), 
+  (2, "Peanut Butter Cookie", 2.75, "Tan", 155), 
+  (3, "Sugar Cookie", 2.50, "White", 145), 
+  (4, "Sprinkles Donut", 3, "Rainbow", 180), 
+  (5, "Chocolate Donut", 1.75, "Brown", 185),
+  (6, "Glazed Donut", 1.50, "Tan", 175),
+  (7, "Lemon Cake", 2.75, "Yellow", 150),
+  (8, "Vanilla Cake", 2.50, "White", 145);
+  
+-- Display the database ordered by price highest to lowest
+  
+SELECT * FROM myBakery ORDER BY productPrice desc;
+
+-- What is the average amount of calories of products from myBakery
+
+SELECT AVG(productCalories) FROM myBakery ORDER BY productCalories 
+
+-- What is the top 3 highest calorie products?
+
+SELECT productName, productCalories FROM myBakery ORDER BY productCalories desc LIMIT 3;
+
+-- What are the 3 lowest priced products?
+
+SELECT productName, productPrice FROM mybakery ORDER BY productPrice LIMIT 3;
